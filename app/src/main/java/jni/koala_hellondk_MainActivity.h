@@ -59,22 +59,6 @@ extern "C" {
 #define koala_hellondk_MainActivity_DEFAULT_KEYS_SEARCH_GLOBAL 4L
 /*
  * Class:     koala_hellondk_MainActivity
- * Method:    updateFile
- * Signature: (Ljava/lang/String;)V
- */
-JNIEXPORT void JNICALL Java_koala_hellondk_MainActivity_updateFile
-  (JNIEnv *, jclass, jstring);
-
-/*
- * Class:     koala_hellondk_MainActivity
- * Method:    updateIntArray
- * Signature: ([I)[I
- */
-JNIEXPORT jintArray JNICALL Java_koala_hellondk_MainActivity_updateIntArray
-  (JNIEnv *, jclass, jintArray);
-
-/*
- * Class:     koala_hellondk_MainActivity
  * Method:    getStringFromNative
  * Signature: ()Ljava/lang/String;
  */

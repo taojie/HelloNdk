@@ -2,6 +2,7 @@ package koala.hellondk;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -13,6 +14,8 @@ public class MainActivity extends Activity {
         System.loadLibrary("hello");
     }
 
+    private static native void updateFile(String path);
+    private static native int[] updateIntArray(int[] data);
     private static native String getStringFromNative();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,12 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         TextView myText = (TextView) findViewById(R.id.myText);
         myText.setText(getStringFromNative());
+        //updateFile("/mnt/sdcard/test.txt");
+        int[] data = {1,2,3,4,5};
+        int[] result = updateIntArray(data);
+        for(int i= 0;i<result.length;i++){
+            Log.i("koala",result[i] + "");
+        }
     }
 
     @Override
